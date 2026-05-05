@@ -4,24 +4,24 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 const testimonials = [
   {
     name: "Елена Родригес",
-    role: "Директор по нейронауке, Quantum Dynamics",
+    role: "Владелица интернет-магазина",
     avatar: "/professional-woman-scientist.png",
     content:
-      "SynapseAI изменил наш подход к нейрореабилитации. Результаты пациентов улучшились на 340% после внедрения.",
+      "Раньше тратила полдня на описания товаров. Теперь NeuralTEXT пишет их за минуту — и даже лучше, чем я сама делала.",
   },
   {
     name: "Маркус Уильямс",
-    role: "Руководитель исследований, Stellar Analytics",
+    role: "Маркетолог, Stellar Agency",
     avatar: "/cybersecurity-expert-man.jpg",
     content:
-      "Точность и протоколы безопасности не имеют аналогов. Мы значительно ускорили клинические испытания с платформой SynapseAI.",
+      "Контент для соцсетей стал выходить в 5 раз быстрее. Клиенты замечают рост вовлечённости — ИИ реально пишет цепляющие тексты.",
   },
   {
     name: "Анна Ковальски",
-    role: "Вице-президент по разработке, Nova Industries",
+    role: "Студентка магистратуры",
     avatar: "/asian-woman-tech-developer.jpg",
     content:
-      "Интеграция прошла безупречно. Адаптивные алгоритмы понимают намерения пользователя лучше любой системы, что мы тестировали.",
+      "Помогает разобраться в сложных темах и структурировать мысли для эссе. Это как умный репетитор, доступный в любое время.",
   },
 ]
 
@@ -30,9 +30,9 @@ export function TestimonialsSection() {
     <section className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют лидеры</h2>
+          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Что говорят пользователи</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят лидеры индустрии о нашей революционной технологии
+            Тысячи людей уже используют NeuralTEXT каждый день для работы, учёбы и творчества
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export function TestimonialsSection() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold text-primary">{testimonial.name}</p>
+                    <p className="font-semibold text-card-foreground">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                   </div>
                 </div>
