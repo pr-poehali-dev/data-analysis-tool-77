@@ -9,7 +9,7 @@ export function CTASection() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="slide-up">
           <h2 className="text-5xl font-bold text-foreground mb-6 font-sans text-balance">
-            Попробуйте NeuralTEXT бесплатно прямо сейчас
+            Попробуйте AstraLogic бесплатно прямо сейчас
           </h2>
           <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
             Присоединяйтесь к тысячам пользователей, которые уже экономят часы каждую неделю с помощью

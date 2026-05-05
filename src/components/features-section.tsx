@@ -46,7 +46,7 @@ export function FeaturesSection() {
     <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности NeuralTEXT</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности AstraLogic</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Всё что нужно для работы с текстом — в одном месте, без лишних инструментов
           </p>

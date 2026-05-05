@@ -7,7 +7,7 @@ const testimonials = [
     role: "Владелица интернет-магазина",
     avatar: "/professional-woman-scientist.png",
     content:
-      "Раньше тратила полдня на описания товаров. Теперь NeuralTEXT пишет их за минуту — и даже лучше, чем я сама делала.",
+      "Раньше тратила полдня на описания товаров. Теперь AstraLogic пишет их за минуту — и даже лучше, чем я сама делала.",
   },
   {
     name: "Маркус Уильямс",
@@ -32,7 +32,7 @@ export function TestimonialsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Что говорят пользователи</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Тысячи людей уже используют NeuralTEXT каждый день для работы, учёбы и творчества
+            Тысячи людей уже используют AstraLogic каждый день для работы, учёбы и творчества
           </p>
         </div>
 

@@ -75,7 +75,7 @@ export default function Chat() {
         >
           <Icon name="ArrowLeft" size={20} />
           <span className="font-orbitron text-lg font-bold">
-            Neural<span className="text-red-500">TEXT</span>
+            Astra<span className="text-red-500">Logic</span>
           </span>
         </button>
         <div className="flex items-center gap-2">

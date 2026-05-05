@@ -114,7 +114,7 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Neural TEXT".split(" ")
+  const titleWords = "Astra Logic".split(" ")
   const subtitle = "Текстовый ИИ нового поколения — пишет, думает, создаёт за вас."
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)

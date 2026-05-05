@@ -14,7 +14,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer" onClick={() => navigate("/")}>
             <h1 className="font-orbitron text-xl font-bold text-white">
-              Neural<span className="text-red-500">TEXT</span>
+              Astra<span className="text-red-500">Logic</span>
             </h1>
           </div>
 
