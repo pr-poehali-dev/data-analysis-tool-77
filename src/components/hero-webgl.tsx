@@ -1,6 +1,8 @@
 import { Canvas, extend, useFrame } from "@react-three/fiber"
 import { useAspect, useTexture } from "@react-three/drei"
 import { useMemo, useRef, useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import Icon from "@/components/ui/icon"
 import * as THREE from "three"
 
 const TEXTUREMAP = { src: "https://i.postimg.cc/XYwvXN8D/img-4.png" }
@@ -118,8 +120,10 @@ export const Hero3DWebGL = () => {
   const subtitle = "Текстовый ИИ нового поколения — пишет, думает, создаёт за вас."
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
+  const [btnVisible, setBtnVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
   const [subtitleDelay, setSubtitleDelay] = useState(0)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setDelays(titleWords.map(() => Math.random() * 0.07))
@@ -136,6 +140,13 @@ export const Hero3DWebGL = () => {
     }
   }, [visibleWords, titleWords.length])
 
+  useEffect(() => {
+    if (subtitleVisible) {
+      const t = setTimeout(() => setBtnVisible(true), 700)
+      return () => clearTimeout(t)
+    }
+  }, [subtitleVisible])
+
   return (
     <div className="h-screen bg-black relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-10">
@@ -145,8 +156,8 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+      <div className="h-screen uppercase items-center w-full absolute z-[60] px-10 flex justify-center flex-col gap-4">
+        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron pointer-events-none">
           <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
             {titleWords.map((word, index) => (
               <div
@@ -162,7 +173,7 @@ export const Hero3DWebGL = () => {
             ))}
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4 pointer-events-none">
           <div
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
@@ -172,6 +183,30 @@ export const Hero3DWebGL = () => {
           >
             {subtitle}
           </div>
+        </div>
+
+        <div
+          style={{
+            opacity: btnVisible ? 1 : 0,
+            transform: btnVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)",
+          }}
+          className="flex flex-col sm:flex-row gap-4 items-center normal-case mt-4"
+        >
+          <button
+            onClick={() => navigate("/chat")}
+            className="btn-glow inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-orbitron font-bold text-sm md:text-base px-7 py-3.5 rounded-xl shadow-xl shadow-red-500/30"
+          >
+            <Icon name="Zap" size={18} />
+            Начать бесплатно
+          </button>
+          <button
+            onClick={() => navigate("/chat")}
+            className="btn-outline-glow inline-flex items-center gap-2 border border-white/20 text-white hover:border-red-500/50 hover:text-red-400 font-orbitron font-bold text-sm md:text-base px-7 py-3.5 rounded-xl"
+          >
+            <Icon name="Play" size={18} />
+            Смотреть демо
+          </button>
         </div>
       </div>
 
